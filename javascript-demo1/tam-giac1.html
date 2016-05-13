@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function ve() {
+            var HTML = "";
+            var x = document.getElementById("nhap").value;
+            if (isNaN(x) || parseInt(x) != parseFloat(x))
+                alert("Ban can nhap vao mot so nguyen");
+            else {
+                for (n = 1; n <= x; n++) {
+                    for (m = n; m >= 1; m--) {
+                        HTML += m % 10 + " ";
+                    }
+                    HTML += "<br>";
+                }
+            }
+            document.getElementById("tamgiac").innerHTML = HTML;
+        }
+    </script>
+    <input type="text" style="width: 300px;height: 40px; font-size: 20px" id="nhap">
+    <button style=" background-color: #1ca8c3;margin-left:20px;width: 100px;height: 40px" onclick="ve()">Vẽ tam giác</button>
+    <div id="tamgiac"></div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script language="JavaScript" type="text/javascript">
+        function mObject() {
+            var subject = document.getElementById("subject").value;
+            var div ="";
+            for(i=0;i<=subject-1;i++)
+            {
+                div+="<div style='height: 30px;width: 250px;margin-top: 10px'>";
+                div+="<div class='a'>";
+                div+="<input type=\"text\"" + " id=\""+"b"+i+"\"" +"placeholder='Name'"+">";
+                div+="</div>";
+                div+="<div class='b'>";
+                div+="<input type=\"number\"" + " id=\""+"a"+i+"\"" +"placeholder='giá trị'"+ ">";
+                div+="</div>";
+                div+="</div>";
+            }
+            document.getElementById("table").innerHTML = div;
+
+        }
+        function drawgraph() {
+                var name= new Array();
+                var value= new Array();
+                var ratio= new Array();
+                var subject = document.getElementById("subject").value;
+                var num= parseInt(subject);
+
+                for (i=0;i<=num-1;i++)
+                {
+                    var bien = "b" + i;
+                    name[i]=document.getElementById(bien).value;
+                }
+            for (i=0;i<=num-1;i++)
+            {
+                var bien = "a" + i;
+                value[i]=document.getElementById(bien).value;
+            }
+            for(i=0;i<=subject;i++)
+            {
+                var x=name[i];
+                var a= i+1;
+                if(x==0)
+                {
+                    alert("Bạn quên chưa nhập tên đối tượng thứ "+a+" kìa");
+                    break;
+                }
+            }
+            for(i=0;i<=subject;i++)
+            {
+                var x=value[i];
+                var a= i+1;
+                if(x==0)
+                {
+                    alert("Bạn quên chưa nhập tên giá trị thứ "+a+" kìa");
+                    break;
+                }
+            }
+            var sum = 0;
+            for (i=0;i<=num-1;i++)
+            {
+                sum+=eval(value[i]);
+            }
+            for (i=0;i<=num-1;i++)
+            {
+                var bien ="b"+i;
+                var x = (value[i]/sum) *100;
+                var n = parseFloat(x); x = Math.round(n * 1000)/1000;
+                ratio[i]= x;
+
+            }
+            var html="";
+            for(i=0;i<=num-1;i++)
+            {
+                html+="<div style='width: 310px;height:200px; margin: 0 auto'>";
+                html+="<div id='name'>";
+                html+=name[i];
+                html+="</div>";
+                html+="<div id='ratio'>";
+                html+="<div id='color' style='height: 20px; width: "+ratio[i]*2+"px'>";
+                html+=ratio[i];
+                html+="%";
+                html+="</div>";
+                html+="</div>";
+                html+="<div>";
+            }
+            document.getElementById("graph").innerHTML=html;
+        }
+
+
+    </script>
+</head>
+<body>
+<div>
+    <p>Nhập số đối tượng</p><input class="input" id="subject" type="number" placeholder="số đối tượng"/>
+
+</div>
+<script language="javascript" type="text/javascript">
+
+</script>
+<button onclick="mObject();">Click</button>
+<div id="table">
+
+</div>
+<button onclick="drawgraph();">Click</button>
+<div id="graph"></div>
+</body>
+</html>

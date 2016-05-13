@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function cong() {
+            var x = document.getElementById("so1").value;
+            var y = document.getElementById("so2").value;
+            var num1 = parseInt(x);
+            var num2 = parseInt(y);
+            var total = num1 + num2;
+            document.getElementById("kq").innerHTML = total;
+        }
+        function tru() {
+            var x = document.getElementById("so1").value;
+            var y = document.getElementById("so2").value;
+            var num1 = parseInt(x);
+            var num2 = parseInt(y);
+            var hieu = num1 - num2;
+            document.getElementById("kq").innerHTML = hieu;
+        }
+        function nhan() {
+            var x = document.getElementById("so1").value;
+            var y = document.getElementById("so2").value;
+            var num1 = parseInt(x);
+            var num2 = parseInt(y);
+            var nhan = num1 * num2;
+            document.getElementById("kq").innerHTML = nhan;
+        }
+        function chia() {
+            var x = document.getElementById("so1").value;
+            var y = document.getElementById("so2").value;
+            var num1 = parseInt(x);
+            var num2 = parseInt(y);
+            var chia = num1 / num2;
+            document.getElementById("kq").innerHTML = chia;
+        }
+        function mu() {
+            var x = document.getElementById("so1").value;
+            var y = document.getElementById("so2").value;
+            var num1 = parseInt(x);
+            var num2 = parseInt(y);
+            var mu = num1 * num1;
+            document.getElementById("kq").innerHTML = mu;
+        }
+    </script>
+    <input type="text" id="so1">
+    <button onclick="cong()">+</button>
+    <button onclick="tru()">-</button>
+    <button onclick="nhan()">*</button>
+    <button onclick="chia()">/</button>
+    <button onclick="mu()">^</button>
+    <input type="text" id="so2">
+    <span>=</span>
+    <div id="kq"></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="author" content="GallerySoft.info" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var msec=0;
+    var sec=0;
+    var min=0;
+    function start()
+    {
+        document.forms[0].display.value=min+":"+sec+":"+msec;
+        chay=setTimeout("start()",1);
+        msec++;
+        if(msec==100)
+        {
+            msec=0;
+            sec++
+        }
+        if(sec==60)
+        {
+            sec=0;
+            min++
+        }
+    }
+
+    function stop()
+    {
+        clearTimeout(chay);
+    }
+    function reset() {
+        window.location.reload()
+    }
+</script>
+<div style="margin-left: 500px; margin-top: 400px">
+    <form>
+        <input type="text" id="bo-dem" name="display" value="00:00:00">
+    </form>
+    <input style="margin-left: 175px" class="button" type="button" value="Start" onclick="start()">
+    <input class="button" type="button" value="Stop" onclick="stop()">
+    <input class="button" type="button" value="Reset" onclick="reset()">
+</div>
+</body>
+</html>

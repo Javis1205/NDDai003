@@ -1,0 +1,74 @@
+.table
+{
+    background-color: #dcdcdc;
+    height: 190px;
+    width:90px ;
+    float: left;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 2px outset #000000;
+    padding-left: 5px;
+}
+.all-b
+{
+    height: 200px;
+    width: 600px;
+}
+.all-a
+{
+    margin: 0 auto;
+    height: 400px;
+    width: 470px;
+}
+#title
+{
+    font-size: 20pt;
+    color: black;
+    margin: 0 auto;
+    height: 40px;
+    width: 190px;
+}
+.a
+{
+   float: left;
+   height: 30px;
+    width: 100px;
+}
+.b
+{
+    float: right;
+    height: 30px;
+    width: 100px;
+    padding-left: 20px;
+}
+#line
+{
+    background-color: aqua;
+}
+#name
+{
+    background-color: antiquewhite;
+    height: 20px;
+    width: 100px;
+    border: solid 2px black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    float: left;
+
+
+}
+#color
+{
+    background-color: aqua;
+}
+#ratio
+{
+    background-color: antiquewhite;
+    height: 20px;
+    width: 200px;
+    border: solid 2px black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    float: right;
+}
